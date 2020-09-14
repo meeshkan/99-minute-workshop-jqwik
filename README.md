@@ -8,5 +8,3 @@ After this workshop, you will be able to
 - execute a property-based test using jqwik,
 - create reports from jqwik tests and
 - run a property-based test against a SpringBoot server.
-
-For more information on the 99-Minute Workshops click here.
