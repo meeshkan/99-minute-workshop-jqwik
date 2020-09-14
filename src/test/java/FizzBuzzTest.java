@@ -9,9 +9,19 @@ class FizzBuzzTest {
         return fizzBuzz().get(i - 1).startsWith("Fizz");
     }
 
+    @Property
+    boolean any_element_less_than_or_equal_to_two_returns_itself_stringified(@ForAll("eitherOneOrTwo") int i) {
+        return fizzBuzz().get(i - 1).equals(String.valueOf(i));
+    }
+
     @Provide
     Arbitrary<Integer> divisibleBy3() {
         return Arbitraries.integers().between(1, 100).filter(i -> i % 3 == 0);
+    }
+
+    @Provide
+    Arbitrary<Integer> eitherOneOrTwo() {
+        return Arbitraries.integers().between(1, 2);
     }
 
     private List<String> fizzBuzz() {
